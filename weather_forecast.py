@@ -37,7 +37,10 @@ def get_weather(city):
     if response.status_code == 200:
         return response.json()
     else:
+        # Show exact API error in Streamlit
+        st.error(f"API error {response.status_code}: {response.text}")
         return None
+
 
 
 # -------------------------------
